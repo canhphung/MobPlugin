@@ -238,4 +238,8 @@ public class BlockEntitySpawner extends BlockEntitySpawnable {
     public void setMaxNearbyEntities(int count) {
         this.maxNearbyEntities = count;
     }
+    
+    public String getSaveId() {
+        return "MobSpawner";
+    }
 }

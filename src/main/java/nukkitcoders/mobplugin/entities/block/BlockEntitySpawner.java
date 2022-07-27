@@ -169,7 +169,10 @@ public class BlockEntitySpawner extends BlockEntitySpawnable {
 
     @Override
     public void saveNBT() {
-        super.saveNBT();
+        this.namedTag.putInt("x", (int) this.getX());
+        this.namedTag.putInt("y", (int) this.getY());
+        this.namedTag.putInt("z", (int) this.getZ());
+        this.namedTag.putBoolean("isMovable", this.movable);
 
         this.namedTag.putInt(TAG_ENTITY_ID, this.entityId);
         this.namedTag.putString(TAG_ID, "MobSpawner");
@@ -239,7 +242,4 @@ public class BlockEntitySpawner extends BlockEntitySpawnable {
         this.maxNearbyEntities = count;
     }
     
-    public String getSaveId() {
-        return "MobSpawner";
-    }
 }
